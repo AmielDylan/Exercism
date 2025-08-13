@@ -34,8 +34,8 @@ export class ProgramWindow {
     }
 
     resize(size){
-        size.width = size.width < 1 ? 1 : (this.position.x + size.width > this.screenSize.width - this.position.x ? this.screenSize.width - this.position.x : size.width);
-        size.height = size.height < 1 ? 1 : (this.position.y + size.height > this.screenSize.height - this.position.y ? this.screenSize.height - this.position.y : size.height);
+        size.width = size.width < 1 ? 1 : (this.position.x + size.width > this.screenSize.width ? this.screenSize.width - this.position.x : size.width);
+        size.height = size.height < 1 ? 1 : (this.position.y + size.height > this.screenSize.height ? this.screenSize.height - this.position.y : size.height);
 
         this.size = size;
     }
