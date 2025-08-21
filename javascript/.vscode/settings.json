@@ -1,7 +1,8 @@
 {
-    "javascript.suggest.enabled": true,
-    "typescript.suggest.enabled": true,
-    "javascript.suggest.completeJSDocs": true,
+    "javascript.suggest.enabled": false,
+    "typescript.suggest.enabled": false,
+    "javascript.suggest.completeJSDocs": false,
     "typescript.suggest.completeJSDocs": false,
-    "typescript.suggest.completeFunctionCalls": true
+    "typescript.suggest.completeFunctionCalls": false,
+    "figma.autocompleteProperties": false
 }

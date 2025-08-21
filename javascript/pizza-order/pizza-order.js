@@ -11,7 +11,38 @@
  * @returns {number} the price of the pizza
  */
 export function pizzaPrice(pizza, ...extras) {
-  throw new Error('Remove this line and implement the function');
+  let sumPrice = 0;
+  let extraArray = [...extras];
+
+  if (extraArray.length === 0) {
+
+    switch(pizza){
+      case 'Margherita':
+        sumPrice = 7;
+        break;
+      case 'Caprese':
+        sumPrice = 9;
+        break;
+      case 'Formaggio':
+        sumPrice = 10;
+        break;
+    }
+
+    return sumPrice;
+  }
+
+  switch(extraArray[extraArray.length - 1]){
+    case 'ExtraSauce':
+      sumPrice = 1;
+      break;
+    case 'ExtraToppings':
+      sumPrice = 2;
+      break;
+  }
+
+  extraArray.pop();
+
+  return sumPrice + pizzaPrice(pizza, ...extraArray);
 }
 
 /**
@@ -24,5 +55,15 @@ export function pizzaPrice(pizza, ...extras) {
  * @returns {number} the price of the total order
  */
 export function orderPrice(pizzaOrders) {
-  throw new Error('Remove this line and implement the function');
+  let sumPrice = 0;
+  
+  pizzaOrders.forEach((order) => {
+    sumPrice += pizzaPrice(order.pizza, ...order.extras);
+  });
+
+  // sumPrice = pizzaOrders.reduce((acc, order) => {
+  //   return acc + pizzaPrice(order.pizza, ...order.extras);
+  // }, sumPrice);
+
+  return sumPrice;
 }
